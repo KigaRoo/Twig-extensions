@@ -25,6 +25,7 @@ class Twig_Extensions_Extension_Text extends Twig_Extension
             'truncate' => new Twig_Filter_Function('twig_truncate_filter', array('needs_environment' => true)),
             'wordwrap' => new Twig_Filter_Function('twig_wordwrap_filter', array('needs_environment' => true)),
             'nl2br'    => new Twig_Filter_Function('twig_nl2br_filter', array('pre_escape' => 'html', 'is_safe' => array('html'))),
+            'nl2br_no_pre_escape' => new Twig_Filter_Function('twig_nl2br_filter', array('is_safe' => array('html'))),
         );
     }
 
@@ -102,3 +103,4 @@ if (function_exists('mb_get_info')) {
         return wordwrap($value, $length, $separator, !$preserve);
     }
 }
+
